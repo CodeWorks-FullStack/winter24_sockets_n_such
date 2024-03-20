@@ -96,9 +96,9 @@ export class SocketHandler {
     if (this.requiresAuth && !this.authenticated) {
       return this.enqueue(action, payload)
     }
-    if (!this.connected) {
-      return this.enqueue(action, payload)
-    }
+    // if (!this.connected) {
+    //   return this.enqueue(action, payload)
+    // }
     logger.log('📡', action, payload)
     this.socket.emit(action, payload)
   }
